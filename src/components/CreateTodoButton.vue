@@ -3,25 +3,34 @@
 </template>
 
 <script>
+import { useQuasar } from 'quasar'
+import { addTodo } from 'src/stores/todoStore'
+
 export default {
-  methods: {
-    handleButtonClicked () {
-      this.$q.dialog({
+  setup () {
+    const $q = useQuasar()
+
+    const handleButtonClicked = () => {
+      $q.dialog({
         title: 'Create Todo',
         prompt: {
           model: '',
           type: 'text'
         }
       })
-        .onOk(this.createTodo)
-    },
+        .onOk(createTodo)
+    }
 
-    createTodo (data) {
-      this.$q.notify({
-        message: 'Todo Created!',
-        icon: 'mdi-check',
-        color: 'positive'
+    const createTodo = (todoTitle) => {
+      addTodo({
+        id: 3,
+        label: todoTitle,
+        completed: false
       })
+    }
+
+    return {
+      handleButtonClicked
     }
   }
 }

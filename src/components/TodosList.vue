@@ -1,12 +1,15 @@
 <template>
   <q-list>
-    <q-item>
+    <q-item
+      v-for="todo in todos"
+      :key="todo.id"
+    >
       <q-item-section side>
-        <UpdateTodoCheckbox />
+        <UpdateTodoCheckbox :model-value="todo.completed" />
       </q-item-section>
 
       <q-item-section>
-        Go Shopping
+        {{ todo.label }}
       </q-item-section>
 
       <q-item-section side>
@@ -24,11 +27,19 @@
 <script>
 import UpdateTodoCheckbox from 'components/UpdateTodoCheckbox.vue'
 import DeleteTodoButton from 'components/DeleteTodoButton.vue'
+import { todos } from 'src/stores/todoStore'
 
 export default {
   components: {
     UpdateTodoCheckbox,
     DeleteTodoButton
+  },
+
+  setup () {
+    return {
+      todos
+    }
   }
+
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <q-checkbox :model-value="true" />
+  <q-checkbox />
 </template>
 
 <script>
