@@ -20,11 +20,15 @@
       :key="todo.id"
     >
       <q-item-section side>
-        <UpdateTodoCheckbox :model-value="todo.complete" />
+        <UpdateTodoCheckbox :todo="todo" />
       </q-item-section>
 
       <q-item-section>
-        {{ todo.label }}
+        <UpdateTodoLabel
+          borderless
+          :todo="todo"
+          dense
+        />
       </q-item-section>
 
       <q-item-section side>
@@ -33,6 +37,7 @@
           round
           size="sm"
           icon="mdi-delete"
+          :todo="todo"
         />
       </q-item-section>
     </q-item>
@@ -42,13 +47,15 @@
 <script>
 import UpdateTodoCheckbox from 'components/UpdateTodoCheckbox.vue'
 import DeleteTodoButton from 'components/DeleteTodoButton.vue'
+import UpdateTodoLabel from 'components/UpdateTodoLabel.vue'
 import { todos, $get } from 'src/stores/todoStore'
 import { ref } from 'vue'
 
 export default {
   components: {
     UpdateTodoCheckbox,
-    DeleteTodoButton
+    DeleteTodoButton,
+    UpdateTodoLabel
   },
 
   setup () {
