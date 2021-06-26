@@ -1,15 +1,19 @@
 <template>
-  <div class="row">
+  <div
+    class="row"
+    :class="[featureSection.reverse ? 'reverse' : '']"
+  >
     <div class="col-xs-12 col-md-6 col-lg-4 flex flex-center">
       <div
         class="q-pa-md"
         style="max-width: 800px;"
+        :class="[featureSection.reverse ? 'text-right' : '']"
       >
         <h3 class="q-my-none">
-          It's CRAZY Simple!
+          {{ featureSection.title }}
         </h3>
         <div>
-          This is a ToDo app you'll understand in seconds. The interface is intuitive, and you'll be organizing like a pro before you know it!
+          {{ featureSection.body }}
         </div>
       </div>
     </div>
@@ -18,7 +22,7 @@
       <div class="q-pa-md full-width flex flex-center">
         <q-img
           style="max-width: 800px;"
-          src="https://picsum.photos/800/600"
+          :src="featureSection.imgSrc"
         />
       </div>
     </div>
@@ -27,9 +31,11 @@
 
 <script>
 export default {
-  // name: 'ComponentName',
-  setup () {
-    return {}
+  props: {
+    featureSection: {
+      required: true,
+      type: Object
+    }
   }
 }
 </script>

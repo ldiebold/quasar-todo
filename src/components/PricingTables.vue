@@ -1,6 +1,6 @@
 <template>
   <div class="row justify-center">
-    <div class="col-12 text-center q-pa-lg">
+    <div class="col-12 text-center q-pa-lg q-mb-md">
       <h3 class="q-my-none">
         Select A Plan That's Right For <strong class="text-primary">YOU</strong>
       </h3>

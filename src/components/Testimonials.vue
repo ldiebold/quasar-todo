@@ -1,7 +1,10 @@
 <template>
   <div class="row justify-center">
     <div class="col-12 flex flex-center">
-      <div style="max-width: 600px;">
+      <div
+        style="max-width: 600px;"
+        class="q-mb-lg"
+      >
         <h3 class="q-my-none">
           Testimonials
         </h3>
@@ -12,8 +15,8 @@
     </div>
 
     <div
-      class="row justify-center"
-      style="max-width: 1100px;"
+      class="row justify-center full-width"
+      style="max-width: 1300px;"
     >
       <div
         v-for="i in 3"
