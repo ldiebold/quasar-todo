@@ -11,6 +11,16 @@ const routes = [
     ]
   },
   {
+    path: '/',
+    component: () => import('layouts/BlankLayout.vue'),
+    children: [
+      {
+        path: 'landing',
+        component: () => import('pages/LandingPage.vue')
+      }
+    ]
+  },
+  {
     path: '/auth',
     component: () => import('layouts/BlankLayout.vue'),
     children: [

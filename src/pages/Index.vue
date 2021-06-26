@@ -1,10 +1,5 @@
 <template>
   <q-page class="row">
-    <div
-      v-touch-swipe.mouse="fire"
-      class="bg-green-4 relative-position"
-      style="width: 300px; height: 300px;"
-    />
     <q-card class="col-xs-9">
       <q-toolbar>
         <q-input
